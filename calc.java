@@ -41,7 +41,7 @@ public class calc {
         } else if (operator != '+' && operator != '-' && operator != '*' && operator != '/') {
             System.out.println("Falsche taste bro");
         } else {
-            System.out.println("Ergebnis:" + e);
+            System.out.println("Ergebnis:" + formatResult(e));
         }
 
         System.out.println("Möchtest du eine weitere Berechnung durchführen? [y/n]");
@@ -64,6 +64,14 @@ public class calc {
         System.out.println("---------NetaCalc---------");
         System.out.println("Welcome to NetaCalc - A Calculator, sponsored by our Prime Minister Benjamin Netanyahu");
         System.out.println("Please enter your login credentials!");
+    }
+
+    public static String formatResult(double value) {
+        if (value == Math.floor(value) && !Double.isInfinite(value)) {
+            return String.valueOf((long) value);   // ganze Zahl -> ohne Komma
+        } else {
+            return String.valueOf(value);           // hat Nachkommastellen -> normal
+        }
     }
 
     public static boolean login() {
