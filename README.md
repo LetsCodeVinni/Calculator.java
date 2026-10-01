@@ -10,6 +10,9 @@ First release, featuring a basic calculator.
 V1.1:
 -> Added a rounding system, so whole numbers get printed without a comma followed by a zero.
 
+V1.2:
+-> Added Exponentials and Comparisons (i got javamogged, thx to tanukimario)
+
 ----
 Comming soon:
 -> Customizable Rounding of the Calculation Result
