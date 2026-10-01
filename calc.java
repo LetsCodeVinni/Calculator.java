@@ -19,7 +19,7 @@ public class calc {
         System.out.print("Zahl 1:  ");
         double z1 = magic.nextDouble();
 
-        System.out.print("Rechenart:  ");
+        System.out.print("Rechenart [+,-,*,/,^,?,<,>,!,%]:  ");
         char operator = magic.next().charAt(0);
 
         System.out.print("Zahl 2:  ");
@@ -31,8 +31,11 @@ public class calc {
             case '*' -> z1 * z2;
             case '/' -> z1 / z2;
             case '^' -> Math.pow(z1, z2);
+            case '?' -> Math.sqrt(z1);
             case '<' -> (z1 < z2) ? 1.0 : 0.0;
             case '>' -> (z1 > z2) ? 1.0 : 0.0;
+            case '!' -> fac(z1);
+            case '%' -> z1 % z2;
             default -> {
                 System.out.println("Unbekannter Operator!");
                 yield 0;
@@ -47,6 +50,15 @@ public class calc {
 
         System.out.println("Möchtest du eine weitere Berechnung durchführen? [y/n]");
         return magic.next().charAt(0);
+    }
+
+    public static void fac(double z1) {
+        double temp = z1 - 1;
+        while(temp > 0) {
+            z1*=temp;
+            temp--;
+        }
+        return z1;
     }
 
     public static void loadinganimation() throws InterruptedException {
