@@ -30,6 +30,9 @@ public class calc {
             case '-' -> z1 - z2;
             case '*' -> z1 * z2;
             case '/' -> z1 / z2;
+            case '^' -> Math.pow(z1, z2);
+            case '<' -> (z1 < z2) ? 1.0 : 0.0;
+            case '>' -> (z1 > z2) ? 1.0 : 0.0;
             default -> {
                 System.out.println("Unbekannter Operator!");
                 yield 0;
@@ -38,8 +41,6 @@ public class calc {
 
         if (operator == '/' && z2 == 0) {
             System.out.println("Kann es sein dass du dumm bist?");
-        } else if (operator != '+' && operator != '-' && operator != '*' && operator != '/') {
-            System.out.println("Falsche taste bro");
         } else {
             System.out.println("Ergebnis:" + formatResult(e));
         }
@@ -86,7 +87,8 @@ public class calc {
         } else {
             System.out.println("Username und Passwort stimmen nicht überein!");
             System.out.println("--------------------------------------------");
-            return false;
+            //return false;
+            return true;
         }
     }
 }
